@@ -4,12 +4,10 @@ module Bookshelf
   module Views
     module Books
       class Index < Bookshelf::View
+        include Deps["repos.book_repo"]
+
         expose :books do
-          [
-            {title: '11月ハッカソン'},
-            {title: 'rails が死んだ'},
-            {title: 'しかし、rubyは生きているはず'}
-          ]
+          book_repo.all_by_title
         end
       end
     end
