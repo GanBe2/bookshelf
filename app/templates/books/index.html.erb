@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="mb-0">本の一覧</h1>
+  <a href="<%= routes.path(:new_book) %>" class="btn btn-primary">New Book</a>
+</div>
+
+<div class="list-group">
+  <% books.each do |book| %>
+    <a href="<%= routes.path(:book, id: book[:id]) %>" class="list-group-item list-group-item-action"><%= book[:title] %></a>
+  <% end %>
+</div>
