@@ -3,7 +3,7 @@
 
 <div class="mb-4">
   <%= form_for :book, routes.path(:book, id: book.id), method: :delete do |f| %>
-    <%= f.submit "Delete", class: "btn btn-outline-danger" %>
+    <%= f.submit "Delete", class: "btn btn-outline-danger", onclick: "return confirm('Delete this book?')" %>
   <% end %>
 </div>
 
