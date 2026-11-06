@@ -2,6 +2,6 @@
 
 <div class="list-group">
   <% books.each do |book| %>
-    <a href="/books/<%= book[:id] %>" class="list-group-item list-group-item-action"><%= book[:title] %></a>
+    <a href="<%= routes.path(:book, id: book[:id]) %>" class="list-group-item list-group-item-action"><%= book[:title] %></a>
   <% end %>
 </div>
