@@ -21,7 +21,7 @@ module Bookshelf
             response.flash[:notice] = "Book updated successfully."
             response.redirect_to routes.path(:book, id: book[:id])
           else
-            response.flash[:alert] = "Failed to update book. Please check the input."
+            response.flash.now[:alert] = "Failed to update book. Please check the input."
           end
         end
       end
