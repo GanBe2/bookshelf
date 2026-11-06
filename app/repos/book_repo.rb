@@ -20,7 +20,7 @@ module Bookshelf
       end
 
       def delete(id)
-        books.by_pk(id).cjhangeset(:delete).commit
+        books.by_pk(id).changeset(:delete).commit
       end
     end
   end
