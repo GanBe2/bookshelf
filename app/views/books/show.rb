@@ -7,7 +7,7 @@ module Bookshelf
         include Deps["repos.book_repo"]
 
         expose :book do |id:|
-          book_repo.get(id)
+          book_repo.get_with_reviews(id)
         end
       end
     end

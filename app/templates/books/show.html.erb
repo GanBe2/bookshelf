@@ -6,3 +6,21 @@
     <%= f.submit "Delete" %>
   <% end %>
 </div>
+
+<h2>Reviews</h2>
+<ul>
+  <% book.reviews.each do |review| %>
+    <li><%= review[:content] %></li>
+  <% end %>
+</ul>
+
+<%= form_for :review, routes.path(:book_reviews, book_id: book.id) do |f| %>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.submit "Add Review" %>
+  </div>
+<% end %>

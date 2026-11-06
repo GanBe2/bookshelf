@@ -11,6 +11,10 @@ module Bookshelf
         books.by_pk(id).one!
       end
 
+      def get_with_reviews(id)
+        books.combine(:reviews).by_pk(id).one!
+      end
+
       def create(attributes)
         books.changeset(:create, attributes).commit
       end

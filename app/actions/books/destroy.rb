@@ -11,7 +11,7 @@ module Bookshelf
         end
 
         def handle(request, response)
-          result = book_repo.delete(request.params[:id])
+          book_repo.delete(request.params[:id])
 
           response.flash[:notice] = "Book deleted successfully."
           response.redirect_to routes.path(:books)
