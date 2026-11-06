@@ -6,6 +6,10 @@ module Bookshelf
       def all_by_title
         books.order(books[:title].asc).to_a
       end
+
+      def get(id)
+        books.by_pk(id).one!
+      end
     end
   end
 end
