@@ -3,6 +3,6 @@
 module Bookshelf
   class Routes < Hanami::Routes
     root to: "home.index"
-    resources :books, only: %i[index show new create edit update]
+    resources :books
   end
 end
