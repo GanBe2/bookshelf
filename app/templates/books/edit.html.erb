@@ -1,16 +1,16 @@
-<h1>Edit Book</h1>
+<h1 class="mb-4">Edit Book</h1>
 
 <%= form_for :book, routes.path(:book, id: book.id), method: :patch do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :author, class: "form-label" %>
+    <%= f.text_field :author, class: "form-control" %>
   </div>
   <div>
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-  </div>
-  <div>
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
   </div>
 <% end %>
 

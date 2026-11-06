@@ -1,26 +1,26 @@
 <h1><%= book[:title] %></h1>
-<p>Author: <%= book[:author] %></p>
+<p class="text-body-secondary">Author: <%= book[:author] %></p>
 
-<div>
+<div class="mb-4">
   <%= form_for :book, routes.path(:book, id: book.id), method: :delete do |f| %>
-    <%= f.submit "Delete" %>
+    <%= f.submit "Delete", class: "btn btn-outline-danger" %>
   <% end %>
 </div>
 
-<h2>Reviews</h2>
-<ul>
+<h2 class="h4">Reviews</h2>
+<ul class="list-group mb-4">
   <% book.reviews.each do |review| %>
-    <li><%= review[:content] %></li>
+    <li class="list-group-item"><%= review[:content] %></li>
   <% end %>
 </ul>
 
 <%= form_for :review, routes.path(:book_reviews, book_id: book.id) do |f| %>
-  <div>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+  <div class="mb-3">
+    <%= f.label :content, class: "form-label" %>
+    <%= f.text_area :content, class: "form-control", rows: 3 %>
   </div>
 
   <div>
-    <%= f.submit "Add Review" %>
+    <%= f.submit "Add Review", class: "btn btn-primary" %>
   </div>
 <% end %>
